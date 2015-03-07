@@ -1,15 +1,14 @@
 angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
-  var addLink = function(link) {
+  var addLink = function(link, callback) {
     return $http({
       method: 'POST',
       url: '/api/links',
       data: link
     })
     .then(function(resp) {
-
-      console.log(resp.data);
+      callback(resp.data);
     });
   };
 
