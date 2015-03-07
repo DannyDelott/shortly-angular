@@ -7,6 +7,10 @@ angular.module('shortly', [
 ])
 .config(function($routeProvider, $httpProvider) {
   $routeProvider
+    .when('/', {
+      templateUrl: 'app/auth/signin.html',
+      controller: 'AuthController'
+    })
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
@@ -22,6 +26,10 @@ angular.module('shortly', [
     .when('/links', {
       templateUrl: 'app/links/links.html',
       controller: 'LinksController'
+    })
+    .when('/logout', {
+      templateUrl: 'app/auth/signin.html',
+      controller: 'AuthController'
     });
     // Your code here
 
